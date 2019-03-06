@@ -1,0 +1,30 @@
+{
+  "name": "app-template",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "10.14.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node ./bin/www",
+    "lint": "tslint --project ./tsconfig.json 'src/**/*.ts'"
+  },
+  "author": "Slack Technologies, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^4.10.0",
+    "@types/dotenv": "^4.0.3",
+    "@types/express": "^4.16.1",
+    "@types/http-errors": "^1.6.1",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^9.6.44",
+    "dotenv": "^4.0.0",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "tslint": "^5.13.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^2.9.2"
+  }
+}
