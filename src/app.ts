@@ -8,6 +8,7 @@ import morgan from 'morgan';
 
 import interactiveComponentsRouter from './routes/interactive_components';
 import slashCommandRouter from './routes/slash_command';
+import appInstalledRouter from './routes/app_installed';
 
 // tslint:enable:import-name
 
@@ -23,6 +24,7 @@ app.use(express.static('public'));
 
 app.use('/interactive_components', interactiveComponentsRouter);
 app.use('/slashcommand', slashCommandRouter);
+app.use('/app_installed', appInstalledRouter);
 
 // catch 404 and forward to error handler
 app.use((_req, _res, next) => {
