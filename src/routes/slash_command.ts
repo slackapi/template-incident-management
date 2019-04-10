@@ -1,5 +1,5 @@
 import express from 'express';
-import { WebClient, Dialog } from '@slack/client';
+import { WebClient, Dialog } from '@slack/web-api';
 
 const router = express.Router();
 

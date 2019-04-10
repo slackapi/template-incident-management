@@ -1,5 +1,5 @@
 import express from 'express';
-import { WebClient } from '@slack/client';
+import { WebClient } from '@slack/web-api';
 
 const router = express.Router();
 
@@ -126,7 +126,7 @@ function handleDialogSubmission(payload: any): void {
   const sevEmoji = (function (importance: string): string {
     switch (importance) {
       case '0':
-        return ':rotating_light';
+        return ':rotating_light:';
         break;
 
       case '1':

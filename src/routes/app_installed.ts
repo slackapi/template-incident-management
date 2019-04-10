@@ -1,5 +1,5 @@
 import express from 'express';
-import { WebClient } from '@slack/client';
+import { WebClient } from '@slack/web-api';
 
 const client = new WebClient();
 const clientId = process.env.CLIENT_ID;
