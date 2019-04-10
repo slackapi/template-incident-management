@@ -123,6 +123,26 @@ function handleDialogSubmission(payload: any): void {
   const incidentDetails = payload.submission;
   const incidentNumber = Math.floor(Math.random() * 1000000) + 1;
   const comments = incidentDetails.comment || 'None';
+  const sevEmoji = (function (importance: string): string {
+    switch (importance) {
+      case '0':
+        return ':rotating_light';
+        break;
+
+      case '1':
+        return ':red_circle:';
+        break;
+
+      case '2':
+        return ':blue_circle:';
+        break;
+
+      default:
+        return ':white_circle:';
+        break;
+    }
+  });
+
 
   webUser.channels.create({ name: `incd-${incidentNumber}` }).then((response: any) => {
     const incidentMessage: any = [
@@ -130,7 +150,8 @@ function handleDialogSubmission(payload: any): void {
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `:rotating_light: *[INCD-${incidentNumber}] An Incident has been opened by <@${payload.user.id}>*`,
+          // tslint:disable-next-line:max-line-length
+          text: `${sevEmoji(incidentDetails.importance)} *[INCD-${incidentNumber}] An Incident has been opened by <@${payload.user.id}>*`,
         },
       },
       {
