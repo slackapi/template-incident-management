@@ -12,9 +12,9 @@ export default {
       type: 'modal',
       blocks: [
         section("It looks like you want to declare an incident"),
-        plainTextInput('Conditions', 'conditions', undefined, true),
-        plainTextInput('Actions', 'actions', undefined, true),
-        plainTextInput('Needs', 'needs', undefined, true),
+        plainTextInput('Conditions', 'conditions', 'What is the current situation?', true),
+        plainTextInput('Actions', 'actions', 'What actions are currently being taken to resolve the incident?', true),
+        plainTextInput('Needs', 'needs', 'What things do we need to do next?', true),
         inputBlock(
           'Time to next report...',
           'next-report',

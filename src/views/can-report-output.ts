@@ -3,10 +3,11 @@ import { section, divider, context } from '../block-kit/block-builder';
 import { KnownBlock } from '@slack/bolt/node_modules/@slack/types'
 
 export default {
-  blocks: (authorID: string, conditions: string, actions: string, needs: string, nextReportTime: string): KnownBlock[] => {
-    const nextReportInMS = ((Date.now() + (+nextReportTime * 60)) / 1000).toFixed(0);
+  blocks: (authorID: string, conditions: string, actions: string, needs: string, nextReportTime: string, channelID: string): KnownBlock[] => {
+    const currentTimeInMS = (Date.now() / 1000).toFixed(0); 
+    const nextReportInMS = (+currentTimeInMS + (+nextReportTime * 60));
     return [
-        section("*CAN Report*"),
+        section(`*CAN Report | <!date^${currentTimeInMS}^{date_short} {time}|${currentTimeInMS}>* | <#${channelID}>`),
         section(`*Incident Commander: *<@${authorID}>`),
         divider(),
         section(`*Conditions*\n${conditions}`),
