@@ -16,7 +16,7 @@
   "author": "Slack Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
-    "@slack/bolt": "^1.5.0",
+    "@slack/bolt": "^3.13.1",
     "dotenv": "^8.2.0",
     "typescript": "^3.7.2"
   },
